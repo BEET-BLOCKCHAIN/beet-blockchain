@@ -116,7 +116,7 @@ def configure(
 
         elif testnet == "false" or testnet == "f":
             print("Setting Mainnet")
-            mainnet_port = "1010"
+            mainnet_port = "8787"
             mainnet_introducer = "introducer.beetnetwork.org"
             net = "mainnet"
             config["full_node"]["port"] = int(mainnet_port)
