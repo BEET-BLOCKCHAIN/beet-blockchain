@@ -4,15 +4,15 @@ from typing import Any, Callable, Dict, List, Optional, Tuple
 from blspy import G1Element, G2Element
 from clvm_tools import binutils
 
-from flax.types.blockchain_format.program import Program, SerializedProgram
-from flax.types.announcement import Announcement
-from flax.types.blockchain_format.coin import Coin
-from flax.types.blockchain_format.sized_bytes import bytes32
-from flax.types.coin_spend import CoinSpend
-from flax.types.spend_bundle import SpendBundle
-from flax.util.condition_tools import ConditionOpcode
-from flax.util.ints import uint64
-from flax.wallet.puzzles.load_clvm import load_clvm
+from beet.types.blockchain_format.program import Program, SerializedProgram
+from beet.types.announcement import Announcement
+from beet.types.blockchain_format.coin import Coin
+from beet.types.blockchain_format.sized_bytes import bytes32
+from beet.types.coin_spend import CoinSpend
+from beet.types.spend_bundle import SpendBundle
+from beet.util.condition_tools import ConditionOpcode
+from beet.util.ints import uint64
+from beet.wallet.puzzles.load_clvm import load_clvm
 
 from tests.clvm.coin_store import BadSpendBundleError, CoinStore, CoinTimestamp
 

@@ -1,6 +1,6 @@
 import pytest
-from flax.util.misc import format_bytes
-from flax.util.misc import format_minutes
+from beet.util.misc import format_bytes
+from beet.util.misc import format_minutes
 
 
 class TestMisc:

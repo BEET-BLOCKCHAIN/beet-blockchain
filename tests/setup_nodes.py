@@ -4,24 +4,24 @@ import signal
 from secrets import token_bytes
 from typing import Dict, List, Optional
 
-from flax.consensus.constants import ConsensusConstants
-from flax.daemon.server import WebSocketServer, create_server_for_daemon, daemon_launch_lock_path, singleton
-from flax.full_node.full_node_api import FullNodeAPI
-from flax.server.start_farmer import service_kwargs_for_farmer
-from flax.server.start_full_node import service_kwargs_for_full_node
-from flax.server.start_harvester import service_kwargs_for_harvester
-from flax.server.start_introducer import service_kwargs_for_introducer
-from flax.server.start_service import Service
-from flax.server.start_timelord import service_kwargs_for_timelord
-from flax.server.start_wallet import service_kwargs_for_wallet
-from flax.simulator.start_simulator import service_kwargs_for_full_node_simulator
-from flax.timelord.timelord_launcher import kill_processes, spawn_process
-from flax.types.peer_info import PeerInfo
-from flax.util.bech32m import encode_puzzle_hash
+from beet.consensus.constants import ConsensusConstants
+from beet.daemon.server import WebSocketServer, create_server_for_daemon, daemon_launch_lock_path, singleton
+from beet.full_node.full_node_api import FullNodeAPI
+from beet.server.start_farmer import service_kwargs_for_farmer
+from beet.server.start_full_node import service_kwargs_for_full_node
+from beet.server.start_harvester import service_kwargs_for_harvester
+from beet.server.start_introducer import service_kwargs_for_introducer
+from beet.server.start_service import Service
+from beet.server.start_timelord import service_kwargs_for_timelord
+from beet.server.start_wallet import service_kwargs_for_wallet
+from beet.simulator.start_simulator import service_kwargs_for_full_node_simulator
+from beet.timelord.timelord_launcher import kill_processes, spawn_process
+from beet.types.peer_info import PeerInfo
+from beet.util.bech32m import encode_puzzle_hash
 from tests.block_tools import BlockTools, test_constants
-from flax.util.hash import std_hash
-from flax.util.ints import uint16, uint32
-from flax.util.keychain import Keychain, bytes_to_mnemonic
+from beet.util.hash import std_hash
+from beet.util.ints import uint16, uint32
+from beet.util.keychain import Keychain, bytes_to_mnemonic
 from tests.time_out_assert import time_out_assert_custom_interval
 
 bt = BlockTools(constants=test_constants)
@@ -207,10 +207,10 @@ async def setup_farmer(
     config = bt.config["farmer"]
     config_pool = bt.config["pool"]
 
-    config["xfx_target_address"] = encode_puzzle_hash(b_tools.farmer_ph, "xfx")
+    config["xbt_target_address"] = encode_puzzle_hash(b_tools.farmer_ph, "xbt")
     config["pool_public_keys"] = [bytes(pk).hex() for pk in b_tools.pool_pubkeys]
     config["port"] = port
-    config_pool["xfx_target_address"] = encode_puzzle_hash(b_tools.pool_ph, "xfx")
+    config_pool["xbt_target_address"] = encode_puzzle_hash(b_tools.pool_ph, "xbt")
 
     if full_node_port:
         config["full_node_peer"]["host"] = self_hostname

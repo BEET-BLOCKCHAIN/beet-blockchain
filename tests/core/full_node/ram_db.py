@@ -2,11 +2,11 @@ from typing import Tuple
 
 import aiosqlite
 
-from flax.consensus.blockchain import Blockchain
-from flax.consensus.constants import ConsensusConstants
-from flax.full_node.block_store import BlockStore
-from flax.full_node.coin_store import CoinStore
-from flax.util.db_wrapper import DBWrapper
+from beet.consensus.blockchain import Blockchain
+from beet.consensus.constants import ConsensusConstants
+from beet.full_node.block_store import BlockStore
+from beet.full_node.coin_store import CoinStore
+from beet.util.db_wrapper import DBWrapper
 
 
 async def create_ram_blockchain(consensus_constants: ConsensusConstants) -> Tuple[aiosqlite.Connection, Blockchain]:

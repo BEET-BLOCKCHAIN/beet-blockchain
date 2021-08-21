@@ -5,15 +5,15 @@ from typing import List
 import pytest
 from blspy import PrivateKey
 
-from flax.pools.pool_wallet import PoolWallet
-from flax.pools.pool_wallet_info import PoolState, FARMING_TO_POOL
-from flax.simulator.simulator_protocol import FarmNewBlockProtocol
-from flax.types.coin_spend import CoinSpend
-from flax.types.full_block import FullBlock
-from flax.types.peer_info import PeerInfo
-from flax.util.ints import uint16, uint32
-from flax.wallet.derive_keys import master_sk_to_singleton_owner_sk
-from flax.wallet.wallet_state_manager import WalletStateManager
+from beet.pools.pool_wallet import PoolWallet
+from beet.pools.pool_wallet_info import PoolState, FARMING_TO_POOL
+from beet.simulator.simulator_protocol import FarmNewBlockProtocol
+from beet.types.coin_spend import CoinSpend
+from beet.types.full_block import FullBlock
+from beet.types.peer_info import PeerInfo
+from beet.util.ints import uint16, uint32
+from beet.wallet.derive_keys import master_sk_to_singleton_owner_sk
+from beet.wallet.wallet_state_manager import WalletStateManager
 from tests.setup_nodes import self_hostname, setup_simulators_and_wallets
 
 

@@ -7,38 +7,38 @@ import pytest
 from clvm import SExp
 from clvm.EvalError import EvalError
 
-import flax.server.ws_connection as ws
+import beet.server.ws_connection as ws
 
-from flax.full_node.mempool import Mempool
-from flax.full_node.full_node_api import FullNodeAPI
-from flax.protocols import full_node_protocol
-from flax.simulator.simulator_protocol import FarmNewBlockProtocol
-from flax.types.announcement import Announcement
-from flax.types.blockchain_format.coin import Coin
-from flax.types.coin_spend import CoinSpend
-from flax.types.condition_opcodes import ConditionOpcode
-from flax.types.condition_with_args import ConditionWithArgs
-from flax.types.spend_bundle import SpendBundle
-from flax.util.clvm import int_to_bytes
-from flax.util.condition_tools import conditions_for_solution
-from flax.util.errors import Err, ValidationError
-from flax.util.ints import uint64
-from flax.util.hash import std_hash
-from flax.types.mempool_inclusion_status import MempoolInclusionStatus
-from flax.util.api_decorators import api_request, peer_required, bytes_required
-from flax.full_node.mempool_check_conditions import parse_condition_args
+from beet.full_node.mempool import Mempool
+from beet.full_node.full_node_api import FullNodeAPI
+from beet.protocols import full_node_protocol
+from beet.simulator.simulator_protocol import FarmNewBlockProtocol
+from beet.types.announcement import Announcement
+from beet.types.blockchain_format.coin import Coin
+from beet.types.coin_spend import CoinSpend
+from beet.types.condition_opcodes import ConditionOpcode
+from beet.types.condition_with_args import ConditionWithArgs
+from beet.types.spend_bundle import SpendBundle
+from beet.util.clvm import int_to_bytes
+from beet.util.condition_tools import conditions_for_solution
+from beet.util.errors import Err, ValidationError
+from beet.util.ints import uint64
+from beet.util.hash import std_hash
+from beet.types.mempool_inclusion_status import MempoolInclusionStatus
+from beet.util.api_decorators import api_request, peer_required, bytes_required
+from beet.full_node.mempool_check_conditions import parse_condition_args
 
 from tests.connection_utils import connect_and_get_peer
 from tests.core.node_height import node_height_at_least
 from tests.setup_nodes import bt, setup_simulators_and_wallets
 from tests.time_out_assert import time_out_assert
-from flax.types.blockchain_format.program import Program, INFINITE_COST
-from flax.consensus.condition_costs import ConditionCost
-from flax.consensus.cost_calculator import NPCResult
-from flax.types.blockchain_format.program import SerializedProgram
+from beet.types.blockchain_format.program import Program, INFINITE_COST
+from beet.consensus.condition_costs import ConditionCost
+from beet.consensus.cost_calculator import NPCResult
+from beet.types.blockchain_format.program import SerializedProgram
 from clvm_tools import binutils
-from flax.types.generator_types import BlockGenerator
-from flax.full_node.mempool_check_conditions import get_name_puzzle_conditions
+from beet.types.generator_types import BlockGenerator
+from beet.full_node.mempool_check_conditions import get_name_puzzle_conditions
 from clvm.casts import int_from_bytes
 
 BURN_PUZZLE_HASH = b"0" * 32
@@ -117,7 +117,7 @@ class TestMempool:
 async def respond_transaction(
     node: FullNodeAPI,
     tx: full_node_protocol.RespondTransaction,
-    peer: ws.WSFlaxConnection,
+    peer: ws.WSbeetConnection,
     tx_bytes: bytes = b"",
     test: bool = False,
 ) -> Tuple[MempoolInclusionStatus, Optional[Err]]:

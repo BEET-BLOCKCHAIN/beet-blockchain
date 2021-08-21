@@ -2,15 +2,15 @@ from typing import Dict
 
 import blspy
 
-from flax.full_node.bundle_tools import simple_solution_generator
-from flax.types.blockchain_format.coin import Coin
-from flax.types.blockchain_format.program import Program
-from flax.types.coin_spend import CoinSpend
-from flax.types.condition_opcodes import ConditionOpcode
-from flax.types.generator_types import BlockGenerator
-from flax.types.spend_bundle import SpendBundle
-from flax.util.ints import uint64
-from flax.wallet.puzzles.p2_delegated_puzzle_or_hidden_puzzle import puzzle_for_pk, solution_for_conditions
+from beet.full_node.bundle_tools import simple_solution_generator
+from beet.types.blockchain_format.coin import Coin
+from beet.types.blockchain_format.program import Program
+from beet.types.coin_spend import CoinSpend
+from beet.types.condition_opcodes import ConditionOpcode
+from beet.types.generator_types import BlockGenerator
+from beet.types.spend_bundle import SpendBundle
+from beet.util.ints import uint64
+from beet.wallet.puzzles.p2_delegated_puzzle_or_hidden_puzzle import puzzle_for_pk, solution_for_conditions
 
 GROUP_ORDER = 0x73EDA753299D7D483339D80809A1D80553BDA402FFFE5BFEFFFFFFFF00000001
 

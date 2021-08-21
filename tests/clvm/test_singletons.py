@@ -4,17 +4,17 @@ from typing import List, Tuple, Optional
 
 from blspy import AugSchemeMPL, G1Element, G2Element, PrivateKey
 
-from flax.types.blockchain_format.program import Program
-from flax.types.blockchain_format.sized_bytes import bytes32
-from flax.types.blockchain_format.coin import Coin
-from flax.types.coin_spend import CoinSpend
-from flax.types.spend_bundle import SpendBundle
-from flax.util.errors import Err
-from flax.util.condition_tools import ConditionOpcode
-from flax.util.ints import uint64
-from flax.consensus.default_constants import DEFAULT_CONSTANTS
-from flax.wallet.lineage_proof import LineageProof
-from flax.wallet.puzzles import (
+from beet.types.blockchain_format.program import Program
+from beet.types.blockchain_format.sized_bytes import bytes32
+from beet.types.blockchain_format.coin import Coin
+from beet.types.coin_spend import CoinSpend
+from beet.types.spend_bundle import SpendBundle
+from beet.util.errors import Err
+from beet.util.condition_tools import ConditionOpcode
+from beet.util.ints import uint64
+from beet.consensus.default_constants import DEFAULT_CONSTANTS
+from beet.wallet.lineage_proof import LineageProof
+from beet.wallet.puzzles import (
     p2_conditions,
     p2_delegated_puzzle_or_hidden_puzzle,
     singleton_top_layer,
@@ -25,14 +25,14 @@ from tests.clvm.test_puzzles import (
     secret_exponent_for_index,
 )
 
-from flax.clvm.spend_sim import SpendSim, SimClient
+from beet.clvm.spend_sim import SpendSim, SimClient
 
 """
 This test suite aims to test:
-    - flax.wallet.puzzles.singleton_top_layer.py
-    - flax.wallet.puzzles.singleton_top_layer.clvm
-    - flax.wallet.puzzles.p2_singleton.clvm
-    - flax.wallet.puzzles.p2_singleton_or_delayed_puzhash.clvm
+    - beet.wallet.puzzles.singleton_top_layer.py
+    - beet.wallet.puzzles.singleton_top_layer.clvm
+    - beet.wallet.puzzles.p2_singleton.clvm
+    - beet.wallet.puzzles.p2_singleton_or_delayed_puzhash.clvm
 """
 
 

@@ -14,18 +14,18 @@ from blspy import G2Element
 
 from clvm_tools.binutils import assemble
 
-from flax.consensus.blockchain import ReceiveBlockResult
-from flax.consensus.constants import ConsensusConstants
-from flax.types.announcement import Announcement
-from flax.types.blockchain_format.program import Program
-from flax.types.coin_record import CoinRecord
-from flax.types.coin_spend import CoinSpend
-from flax.types.condition_opcodes import ConditionOpcode
-from flax.types.full_block import FullBlock
-from flax.types.spend_bundle import SpendBundle
+from beet.consensus.blockchain import ReceiveBlockResult
+from beet.consensus.constants import ConsensusConstants
+from beet.types.announcement import Announcement
+from beet.types.blockchain_format.program import Program
+from beet.types.coin_record import CoinRecord
+from beet.types.coin_spend import CoinSpend
+from beet.types.condition_opcodes import ConditionOpcode
+from beet.types.full_block import FullBlock
+from beet.types.spend_bundle import SpendBundle
 from tests.block_tools import BlockTools, test_constants
-from flax.util.errors import Err
-from flax.util.ints import uint32
+from beet.util.errors import Err
+from beet.util.ints import uint32
 
 from .ram_db import create_ram_blockchain
 

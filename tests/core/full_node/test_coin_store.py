@@ -6,20 +6,20 @@ from typing import List, Optional, Set, Tuple
 import aiosqlite
 import pytest
 
-from flax.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward
-from flax.consensus.blockchain import Blockchain, ReceiveBlockResult
-from flax.consensus.coinbase import create_farmer_coin, create_pool_coin
-from flax.full_node.block_store import BlockStore
-from flax.full_node.coin_store import CoinStore
-from flax.full_node.mempool_check_conditions import get_name_puzzle_conditions
-from flax.types.blockchain_format.coin import Coin
-from flax.types.coin_record import CoinRecord
-from flax.types.full_block import FullBlock
-from flax.types.generator_types import BlockGenerator
-from flax.util.generator_tools import tx_removals_and_additions
-from flax.util.ints import uint64, uint32
+from beet.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward
+from beet.consensus.blockchain import Blockchain, ReceiveBlockResult
+from beet.consensus.coinbase import create_farmer_coin, create_pool_coin
+from beet.full_node.block_store import BlockStore
+from beet.full_node.coin_store import CoinStore
+from beet.full_node.mempool_check_conditions import get_name_puzzle_conditions
+from beet.types.blockchain_format.coin import Coin
+from beet.types.coin_record import CoinRecord
+from beet.types.full_block import FullBlock
+from beet.types.generator_types import BlockGenerator
+from beet.util.generator_tools import tx_removals_and_additions
+from beet.util.ints import uint64, uint32
 from tests.wallet_tools import WalletTool
-from flax.util.db_wrapper import DBWrapper
+from beet.util.db_wrapper import DBWrapper
 from tests.setup_nodes import bt, test_constants
 
 

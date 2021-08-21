@@ -9,14 +9,14 @@ from typing import Dict
 import pytest
 import cProfile
 
-from flax.consensus.block_record import BlockRecord
-from flax.full_node.full_node_api import FullNodeAPI
-from flax.protocols import full_node_protocol as fnp
-from flax.types.condition_opcodes import ConditionOpcode
-from flax.types.condition_with_args import ConditionWithArgs
-from flax.types.unfinished_block import UnfinishedBlock
-from flax.util.clvm import int_to_bytes
-from flax.util.ints import uint64
+from beet.consensus.block_record import BlockRecord
+from beet.full_node.full_node_api import FullNodeAPI
+from beet.protocols import full_node_protocol as fnp
+from beet.types.condition_opcodes import ConditionOpcode
+from beet.types.condition_with_args import ConditionWithArgs
+from beet.types.unfinished_block import UnfinishedBlock
+from beet.util.clvm import int_to_bytes
+from beet.util.ints import uint64
 from tests.wallet_tools import WalletTool
 from tests.core.fixtures import empty_blockchain  # noqa: F401
 

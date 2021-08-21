@@ -2,15 +2,15 @@ import asyncio
 
 import pytest
 
-from flax.rpc.wallet_rpc_api import WalletRpcApi
-from flax.simulator.simulator_protocol import FarmNewBlockProtocol
-from flax.types.blockchain_format.coin import Coin
-from flax.types.blockchain_format.sized_bytes import bytes32
-from flax.types.mempool_inclusion_status import MempoolInclusionStatus
-from flax.types.peer_info import PeerInfo
-from flax.util.bech32m import encode_puzzle_hash
-from flax.util.ints import uint16
-from flax.wallet.util.wallet_types import WalletType
+from beet.rpc.wallet_rpc_api import WalletRpcApi
+from beet.simulator.simulator_protocol import FarmNewBlockProtocol
+from beet.types.blockchain_format.coin import Coin
+from beet.types.blockchain_format.sized_bytes import bytes32
+from beet.types.mempool_inclusion_status import MempoolInclusionStatus
+from beet.types.peer_info import PeerInfo
+from beet.util.bech32m import encode_puzzle_hash
+from beet.util.ints import uint16
+from beet.wallet.util.wallet_types import WalletType
 from tests.setup_nodes import self_hostname, setup_simulators_and_wallets
 from tests.time_out_assert import time_out_assert
 from tests.wallet.sync.test_wallet_sync import wallet_height_at_least
@@ -113,7 +113,7 @@ class TestRLWallet:
 
         await time_out_assert(15, check_balance, 100, api_user, user_wallet_id)
         receiving_wallet = wallet_node_2.wallet_state_manager.main_wallet
-        address = encode_puzzle_hash(await receiving_wallet.get_new_puzzlehash(), "xfx")
+        address = encode_puzzle_hash(await receiving_wallet.get_new_puzzlehash(), "xbt")
         assert await receiving_wallet.get_spendable_balance() == 0
         val = await api_user.send_transaction({"wallet_id": user_wallet_id, "amount": 3, "fee": 2, "address": address})
         assert "transaction_id" in val
@@ -144,7 +144,7 @@ class TestRLWallet:
         await time_out_assert(15, check_balance, 195, api_user, user_wallet_id)
 
         # test spending
-        puzzle_hash = encode_puzzle_hash(await receiving_wallet.get_new_puzzlehash(), "xfx")
+        puzzle_hash = encode_puzzle_hash(await receiving_wallet.get_new_puzzlehash(), "xbt")
         val = await api_user.send_transaction(
             {
                 "wallet_id": user_wallet_id,

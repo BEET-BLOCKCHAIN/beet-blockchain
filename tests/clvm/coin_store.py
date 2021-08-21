@@ -2,17 +2,17 @@ from collections import defaultdict
 from dataclasses import dataclass, replace
 from typing import Dict, Iterator, Optional, Set
 
-from flax.full_node.mempool_check_conditions import mempool_check_conditions_dict  # noqa
-from flax.types.blockchain_format.coin import Coin
-from flax.types.blockchain_format.sized_bytes import bytes32
-from flax.types.coin_record import CoinRecord
-from flax.types.spend_bundle import SpendBundle
-from flax.util.condition_tools import (
+from beet.full_node.mempool_check_conditions import mempool_check_conditions_dict  # noqa
+from beet.types.blockchain_format.coin import Coin
+from beet.types.blockchain_format.sized_bytes import bytes32
+from beet.types.coin_record import CoinRecord
+from beet.types.spend_bundle import SpendBundle
+from beet.util.condition_tools import (
     conditions_dict_for_solution,
     coin_announcement_names_for_conditions_dict,
     puzzle_announcement_names_for_conditions_dict,
 )
-from flax.util.ints import uint32, uint64
+from beet.util.ints import uint32, uint64
 
 
 MAX_COST = 11000000000

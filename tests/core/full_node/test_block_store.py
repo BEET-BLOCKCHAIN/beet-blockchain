@@ -7,10 +7,10 @@ from pathlib import Path
 import aiosqlite
 import pytest
 
-from flax.consensus.blockchain import Blockchain
-from flax.full_node.block_store import BlockStore
-from flax.full_node.coin_store import CoinStore
-from flax.util.db_wrapper import DBWrapper
+from beet.consensus.blockchain import Blockchain
+from beet.full_node.block_store import BlockStore
+from beet.full_node.coin_store import CoinStore
+from beet.util.db_wrapper import DBWrapper
 from tests.setup_nodes import bt, test_constants
 
 log = logging.getLogger(__name__)

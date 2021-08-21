@@ -6,13 +6,13 @@ from typing import List
 
 import pytest
 
-from flax.full_node.weight_proof import _validate_sub_epoch_summaries
-from flax.protocols import full_node_protocol
-from flax.types.blockchain_format.sub_epoch_summary import SubEpochSummary
-from flax.types.full_block import FullBlock
-from flax.types.peer_info import PeerInfo
-from flax.util.hash import std_hash
-from flax.util.ints import uint16
+from beet.full_node.weight_proof import _validate_sub_epoch_summaries
+from beet.protocols import full_node_protocol
+from beet.types.blockchain_format.sub_epoch_summary import SubEpochSummary
+from beet.types.full_block import FullBlock
+from beet.types.peer_info import PeerInfo
+from beet.util.hash import std_hash
+from beet.util.ints import uint16
 from tests.core.fixtures import default_400_blocks, default_1000_blocks, default_10000_blocks, empty_blockchain
 from tests.core.node_height import node_height_exactly, node_height_between
 from tests.setup_nodes import bt, self_hostname, setup_n_nodes, setup_two_nodes, test_constants

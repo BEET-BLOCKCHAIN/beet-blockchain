@@ -1,10 +1,10 @@
 from unittest import TestCase
 
-from flax.types.blockchain_format.program import Program, INFINITE_COST
-from flax.util.byte_types import hexstr_to_bytes
-from flax.wallet.puzzles.load_clvm import load_clvm
+from beet.types.blockchain_format.program import Program, INFINITE_COST
+from beet.util.byte_types import hexstr_to_bytes
+from beet.wallet.puzzles.load_clvm import load_clvm
 
-DESERIALIZE_MOD = load_clvm("flaxlisp_deserialisation.clvm", package_or_requirement="flax.wallet.puzzles")
+DESERIALIZE_MOD = load_clvm("beetlisp_deserialisation.clvm", package_or_requirement="beet.wallet.puzzles")
 
 
 def serialized_atom_overflow(size):

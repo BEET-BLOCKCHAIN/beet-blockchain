@@ -6,19 +6,19 @@ from typing import List, Optional
 
 import pytest
 
-from flax.consensus.blockchain import ReceiveBlockResult
-from flax.consensus.multiprocess_validation import PreValidationResult
-from flax.consensus.pot_iterations import is_overflow_block
-from flax.full_node.full_node_store import FullNodeStore
-from flax.full_node.signage_point import SignagePoint
-from flax.protocols import timelord_protocol
-from flax.protocols.timelord_protocol import NewInfusionPointVDF
-from flax.types.blockchain_format.sized_bytes import bytes32
-from flax.types.unfinished_block import UnfinishedBlock
-from flax.util.block_cache import BlockCache
+from beet.consensus.blockchain import ReceiveBlockResult
+from beet.consensus.multiprocess_validation import PreValidationResult
+from beet.consensus.pot_iterations import is_overflow_block
+from beet.full_node.full_node_store import FullNodeStore
+from beet.full_node.signage_point import SignagePoint
+from beet.protocols import timelord_protocol
+from beet.protocols.timelord_protocol import NewInfusionPointVDF
+from beet.types.blockchain_format.sized_bytes import bytes32
+from beet.types.unfinished_block import UnfinishedBlock
+from beet.util.block_cache import BlockCache
 from tests.block_tools import get_signage_point, BlockTools
-from flax.util.hash import std_hash
-from flax.util.ints import uint8, uint32, uint64, uint128
+from beet.util.hash import std_hash
+from beet.util.ints import uint8, uint32, uint64, uint128
 from tests.core.fixtures import default_1000_blocks, create_blockchain  # noqa: F401
 from tests.setup_nodes import test_constants as test_constants_original
 
